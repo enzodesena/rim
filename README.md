@@ -1,0 +1,2 @@
+# rim
+Randomised Image Method
