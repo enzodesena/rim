@@ -1,5 +1,5 @@
 function h=rim(mic_pos, source_pos, room_dim, beta, ...
-                rir_length, Fs, rand_dist, Tw, Fc, c, plot_images)
+               rir_length, Fs, rand_dist, Tw, Fc, c, plot_images)
 %RIM  Randomized Image Source Method
 %   This script generates the impulse response of the (randomised) image
 %   method as proposed in De Sena et al. "On the modeling of 
@@ -30,12 +30,12 @@ function h=rim(mic_pos, source_pos, room_dim, beta, ...
 % 
 %   RIM(mic_pos, source_pos, room_dim, beta, rir_length, rand_dist, Tw, Fc, c)
 %   - rand_dist is the random distance added to the position of the 
-%   image sources in [meters] (rand_dist=0 for the standard image method; 
-%   default is 0 cm)
-%   - Tw is the length of the low-pass filter in [seconds] (default is 40
-%   samples, i.e. Tw=40/Fs)
+%    image sources in [meters] (rand_dist=0 for the standard image method; 
+%    default is 0 cm)
+%   - Tw is the length of the fractional delay filter in [seconds] 
+%    (default is Tw=0.004 s)
 %   - Fc is the cut-off frequency of the fractional delay filter in [Hz]
-%   (default is Fc=0.9*(Fs/2))
+%    (default is Fc=0.9*(Fs/2))
 %   - c is the speed of sound in m/s (default is c=343)
 %   
 %   If you use this code, please cite De Sena et al. "On the modeling of 
@@ -51,7 +51,7 @@ if nargin < 7
     rand_dist = 0;
 end
 if nargin < 8
-    Tw = 40 / Fs;
+    Tw = 0.004;
 end
 if nargin < 9
     Fc = 0.9*(Fs/2);
@@ -72,7 +72,7 @@ end
 if isvector(mic_pos)
     mic_pos = mic_pos(:); % Make the vector a column vector
 else
-    % If multichannel, verify the mic matrix has 3 rows
+    % If multichannel, verify that the mic matrix has 3 rows
     assert(size(mic_pos, 1) == 3);
 end
 
