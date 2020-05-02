@@ -1,4 +1,4 @@
-function h=rim_sample(mi, so, ro, be, Np, Nr, Tw, Fc)
+function h=rim_depracated(mi, so, ro, be, Np, Nr, Tw, Fc)
 % mi (microphone), so (source) and ro (room) are three-dimensional column vectors.
 % Np: samples of the RIR.
 % Nr: no. of random samples (Nr=0 for original IM).
