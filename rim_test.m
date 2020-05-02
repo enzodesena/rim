@@ -1,3 +1,9 @@
+% This script runs tests for the RIM function
+% The output of the image method has been calculated analytically for
+% a set of simplified examples and checked against the output of the 
+% function. 
+% Author: Enzo De Sena (enzodesena AT gmail DOT com)
+
 
 clear;
 %% Testing IM
@@ -47,7 +53,6 @@ rir = [0; rir(1:8)];
 h = rim(mic_position, source_position, room_dimension, betas, num_points/Fs, Fs, 0, 0);
 assert(all(abs(rir-h*4*pi*c/Fs) <= eps))
 
-
 % Shift dimensions (a way of checking also along z-dimension)
 % we should obtain the same result
 betas = [beta_z1, beta_x1, beta_y1; beta_z2, beta_x2, beta_y2];
@@ -60,7 +65,6 @@ assert(all(abs(rir-h*4*pi*c/Fs) <= eps))
 
 % Shift dimensions again
 % we should obtain the same result
-
 betas = [beta_y1, beta_z1, beta_x1; beta_y2, beta_z2, beta_x2];
 room_dimension = [5; 1000; 5]*c/Fs;
 mic_position = [1; 500; 1]*c/Fs;
@@ -147,19 +151,3 @@ assert(all(abs(h_cmp-h*4*pi*c/Fs) <= 1000*eps))
 
 disp('All tests passed!')
 
-
-
-% %% Testing multiple microphones
-% x_coordinates = linspace(0,4,1000);
-% mics = [x_coordinates; 102 * ones(size(x_coordinates)); 200 * ones(size(x_coordinates))];
-% source = [1.4;100;200];
-% room = [4;200;400];
-% 
-% rir_length = 3000; 
-% betas = 1*ones(2,3);
-% Tw = 40;
-% 
-% h = rism(mics, source, room, betas, rir_length/Fs, Fs, 0.20, ...
-%         Tw/Fs, Fc_ratio*(Fs/2), c);
-%     
-% imagesc(h)
