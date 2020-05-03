@@ -12,7 +12,7 @@ function h=rim(mic_pos, source_pos, room_dim, beta, ...
 %   Peterson, ``Simulating the response of multiple microphones to a 
 %   single acoustic source in a reverberant room,'' JASA, 1986.
 % 
-%   RIM(mic_pos, source_pos, room_dim, beta, rir_length) gives the room
+%   RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs) gives the room
 %   impulse response where:
 %   - mic_pos is the 3xM matrix with the position of M omnidirectional
 %   microphones [meters]. 
@@ -28,10 +28,11 @@ function h=rim(mic_pos, source_pos, room_dim, beta, ...
 %   - rir_length is the length of the RIR [seconds]
 %   - Fs is the sampling frequency [Hz]
 % 
-%   RIM(mic_pos, source_pos, room_dim, beta, rir_length, rand_dist, Tw, Fc, c)
+%   RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs, rand_dist, Tw, Fc, c)
 %   - rand_dist is the random distance added to the position of the 
-%    image sources in [meters] (rand_dist=0 for the standard image method; 
-%    default is 0 cm)
+%    image sources in [meters] 
+%    (rand_dist=0 for the standard image method)
+%    (default is 0 cm)
 %   - Tw is the length of the fractional delay filter in [seconds] 
 %    (default is Tw=0.004 s)
 %   - Fc is the cut-off frequency of the fractional delay filter in [Hz]
