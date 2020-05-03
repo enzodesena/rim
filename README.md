@@ -1,28 +1,21 @@
-# (Randomized) Image Method
+# (Randomized) Image Method (RIM)
 
-This project provides a Matlab implementation of the **image method**, a widely used acoustic model to calculate the room impulse response (RIR) of a rectangular room. The software allows multiple observation points and fractional delays.
+This project provides a Matlab implementation of the **image method**, a widely used acoustic model to calculate the room impulse response (RIR) of a rectangular room. The software allows **multiple microphone positions** and **fractional delays**.
 
-If needed, the software generates can randomise the position of the image sources to avoid the occurrence of **sweeping echoes**, resulting in the so-called **randomized image method**. See ``De Sena et al. "On the modeling of rectangular geometries in  room acoustic simulations." IEEE/ACMT TASLP (2015).``
+If needed, the software generates can randomise the position of the image sources to avoid the occurrence of **sweeping echoes**, resulting in the so-called **randomized image method**. See [De Sena et al. "On the modeling of rectangular geometries in  room acoustic simulations." IEEE/ACMT TASLP (2015)](https://ieeexplore.ieee.org/document/7045580).
 
+For the [Julia](https://julialang.org) implementation see [https://github.com/nantonel/RIM.jl](https://github.com/nantonel/RIM.jl), maintained by [Niccolò Antonello](https://nantonel.github.io).
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites and installation
 
 This version has been tested on Matlab2020a, but I have no reason to believe it wouldn't work on previous versions too. 
-No toolbox needed. 
-
-### Installing
-
-No installation needed. 
+No toolbox needed. No installation is needed. 
 
 ### Running the tests
 
-To run the tests simply run
-
-```
-rim_tests
-```
+To run the tests simply run `rim_tests`
 
 ## Using the software
 
@@ -43,6 +36,10 @@ The following are optional inputs:
 - `Tw` is the length of the fractional delay filter in [seconds] (default is Tw=0.004 s)
 - `Fc` is the cut-off frequency of the fractional delay filter in [Hz] (default is Fc=0.9*(Fs/2))
 - `c` is the speed of sound in m/s (default is c=343)
+
+## Multiple microphone positions
+
+As opposed to the original implementation in the paper, this implementation of the RIM allows to return the room impulse response at multiple positions. This is done by using the same randomised position of the image source for all receivers. The wavefront due to each image source would be originating in a slightly inaccurate point (which is necessary to remove sweeping echoes), but the relative time arrivals and directions would be correct across receivers. This allows application in studies simulating multiple omnidirectional microphones, e.g. beamforming. 
 
 ## Generating the plots in the 2015 Transaction paper
 
@@ -65,6 +62,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you use this code, please cite the following paper:
 
-``De Sena, E., Antonello, N., Moonen, M. and Van Waterschoot, T., 2015. On the modeling of rectangular geometries in room acoustic simulations. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(4), pp.774-786.`` 
-
-You can download the paper at [IEEE Xplore](https://ieeexplore.ieee.org/document/7045580).
+[De Sena, E., Antonello, N., Moonen, M. and Van Waterschoot, T., 2015. On the modeling of rectangular geometries in room acoustic simulations. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(4), pp.774-786.](https://ieeexplore.ieee.org/document/7045580)
