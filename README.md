@@ -29,7 +29,7 @@ rim_tests
 The main script is `rim.m`:
 
 ``RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs)``
-- `mic_pos` is the 3xM matrix with the position of M omnidirectional microphones. The dimenions are in [meters]. 
+- `mic_pos` is the 3xM matrix with the position of M omnidirectional microphones. The dimensions are in [meters]. 
 - `source_pos` is the 3x1 vector with the position of the omni sound source [meters]. 
 - `room_dim` is the 3x1 vector with the dimensions of the room [meters].
 - `beta` is the 2x3 vector with the reflection coefficient of the walls, in this order: [x1, y1, z1; x2, y2, z2], with e.g. x1 and x2 are the reflection coefficient of the surface orthogonal to the x-axis and with the subscript 1 referring to walls adjacent to the coordinate origin, and the subscript 2 referring to the opposite wall. In the anechoic case beta=zeros(2,3). 
