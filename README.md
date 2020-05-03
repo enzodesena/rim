@@ -68,4 +68,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use this code, please cite the following paper:
 
 ``De Sena, E., Antonello, N., Moonen, M. and Van Waterschoot, T., 2015. On the modeling of rectangular geometries in room acoustic simulations. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(4), pp.774-786.`` 
-(https://ieeexplore.ieee.org/document/7045580)[https://ieeexplore.ieee.org/document/7045580]
+
+[IEEE Xplore](https://ieeexplore.ieee.org/document/7045580)
