@@ -36,22 +36,21 @@ rim_tests
 
 The main script is `rim.m`:
 
-RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs) gives the room
-impulse response where:
-- mic_pos is the 3xM matrix with the position of M omnidirectional microphones. The dimenions are in [meters]. 
-- source_pos is the 3x1 vector with the position of the omni sound source [meters]. 
-- room_dim is the 3x1 vector with the dimensions of the room [meters].
-- beta is the 2x3 vector with the reflection coefficient of the walls, in this order: [x1, y1, z1; x2, y2, z2], with e.g. x1 and x2 are the reflection coefficient of the surface orthogonal to the x-axis and with the subscript 1 referring to walls adjacent to the coordinate origin, and the subscript 2 referring to the opposite wall. In the anechoic case beta=zeros(2,3). 
-- rir_length is the length of the RIR [seconds].
-- Fs is the sampling frequency [Hz].
+``RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs)``
+- `mic_pos` is the 3xM matrix with the position of M omnidirectional microphones. The dimenions are in [meters]. 
+- `source_pos` is the 3x1 vector with the position of the omni sound source [meters]. 
+- `room_dim` is the 3x1 vector with the dimensions of the room [meters].
+- `beta` is the 2x3 vector with the reflection coefficient of the walls, in this order: [x1, y1, z1; x2, y2, z2], with e.g. x1 and x2 are the reflection coefficient of the surface orthogonal to the x-axis and with the subscript 1 referring to walls adjacent to the coordinate origin, and the subscript 2 referring to the opposite wall. In the anechoic case beta=zeros(2,3). 
+- `rir_length` is the length of the RIR [seconds].
+- `Fs` is the sampling frequency [Hz].
 
 The following are optional inputs:
 
 RIM(mic_pos, source_pos, room_dim, beta, rir_length, Fs, rand_dist, Tw, Fc, c)
-- rand_dist is the random distance added to the position of the image sources in [meters]; in the Transaction paper we found that rand_dist=0.08 m was sufficient to remove sweeping echoes in most cases studied (rand_dist=0 for the standard image method) (default is 0 cm).
-- Tw is the length of the fractional delay filter in [seconds] (default is Tw=0.004 s)
-- Fc is the cut-off frequency of the fractional delay filter in [Hz] (default is Fc=0.9*(Fs/2))
-- c is the speed of sound in m/s (default is c=343)
+- `rand_dist` is the random distance added to the position of the image sources in [meters]; in the Transaction paper we found that rand_dist=0.08 m was sufficient to remove sweeping echoes in most cases studied (rand_dist=0 for the standard image method) (default is 0 cm).
+- `Tw` is the length of the fractional delay filter in [seconds] (default is Tw=0.004 s)
+- `Fc` is the cut-off frequency of the fractional delay filter in [Hz] (default is Fc=0.9*(Fs/2))
+- `c` is the speed of sound in m/s (default is c=343)
 
 ## Generating the plots in the 2015 Transaction paper
 
