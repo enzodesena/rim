@@ -7,18 +7,16 @@ If needed, the software generates can randomise the position of the image source
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 This version has been tested on Matlab2020a, but I have no reason to believe it wouldn't work on previous versions too. 
-No additional toolbox is needed. 
+No toolbox needed. 
 
 ### Installing
 
 No installation needed. 
 
-## Running the tests
+### Running the tests
 
 To run the tests simply run
 
