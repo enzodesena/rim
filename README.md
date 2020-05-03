@@ -1,12 +1,8 @@
 # (Randomized) Image Method
 
-This project provides a Matlab implementation of the **image method**, a widely used acoustic model to calculate the room impulse response (RIR) of a rectangular room. 
+This project provides a Matlab implementation of the **image method**, a widely used acoustic model to calculate the room impulse response (RIR) of a rectangular room. The software allows multiple observation points and fractional delays.
 
-If needed, the software generates can randomise the position of the image sources to avoid the occurrence of **sweeping echoes**, resulting in the so-called **randomized image method**. See De Sena et al. "On the modeling of rectangular geometries in  room acoustic simulations." IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP) 23.4 (2015): 774-786. The software also implements fractional delays as proposed by Peterson, ``Simulating the response of multiple microphones to a single acoustic source in a reverberant room,`` JASA, 1986.
-
-If you use this code, please cite the following paper:
-``De Sena, E., Antonello, N., Moonen, M. and Van Waterschoot, T., 2015. On the modeling of rectangular geometries in room acoustic simulations. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(4), pp.774-786.
-Vancouver``
+If needed, the software generates can randomise the position of the image sources to avoid the occurrence of **sweeping echoes**, resulting in the so-called **randomized image method**. See ``De Sena et al. "On the modeling of rectangular geometries in  room acoustic simulations." IEEE/ACMT TASLP (2015).``
 
 
 ## Getting Started
@@ -67,3 +63,8 @@ Contributions are welcome.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+If you use this code, please cite the following paper:
+``De Sena, E., Antonello, N., Moonen, M. and Van Waterschoot, T., 2015. On the modeling of rectangular geometries in room acoustic simulations. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(4), pp.774-786.
+Vancouver``
