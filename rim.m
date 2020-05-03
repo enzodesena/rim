@@ -7,7 +7,7 @@ function h=rim(mic_pos, source_pos, room_dim, beta, ...
 %   Transactions on Audio, Speech and Language Processing (TASLP) 23.4 
 %   (2015): 774-786.
 %   It can also generate the response of the standard image method,
-%   if needed (simply set `rand_dist` to zeor). 
+%   if needed (simply set `rand_dist` to zero). 
 %   The script uses fractional delays as proposed by 
 %   Peterson, ``Simulating the response of multiple microphones to a 
 %   single acoustic source in a reverberant room,'' JASA, 1986.
