@@ -1,4 +1,4 @@
-# (Randomized) Image Method (RIM)
+# Randomized Image Method (RIM)
 
 This project provides a Matlab implementation of the **image method**, a widely used acoustic model to calculate the room impulse response (RIR) of a rectangular room. The software allows **multiple microphone positions** and **fractional delays**.
 
