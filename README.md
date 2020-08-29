@@ -10,8 +10,9 @@ For the [Julia](https://julialang.org) implementation see [https://github.com/na
 
 ### Prerequisites and installation
 
+No installation is needed. No toolbox needed. 
 This version has been tested on Matlab2020a, but I have no reason to believe it wouldn't work on previous versions too. 
-No toolbox needed. No installation is needed. 
+
 
 ### Running the tests
 
